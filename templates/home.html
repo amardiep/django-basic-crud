@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Home</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    
+      <p>A Unicode-based encoding such as UTF-8 can support many languages and can accommodate pages and forms in any mixture of those languages. Its use also eliminates the need for server-side logic to individually determine the character encoding for each page served or each incoming form submission
+    <div>
+        {% if isActive %}
+        <h1>Today's date is : {{time}}</h1>
+        <h2>Name is : {{name}}</h2>
+            <h1>Student Data</h1>
+                <h2>Student Name is : {{ student_data.st_name }} </h2>
+                <h2>Student Address is : {{ student_data.st_address }}  </h2>
+                <h2>Student Name is : {{ student_data.st_phone_number }} </h2>
+        {% endif %}
+    </div>
+    <h1> For Loop Concept </h1>
+        {% for p in li %}
+            <h3>{{p}}</h3>
+        {% endfor %}
+    </hr>
+    <form action="/home" method='POST'>
+        {% csrf_token %}
+        <input type="text" name="check">
+        <button>SEND</button>
+    </form>
+    <script src="index.js"></script>
+  </body>
+  {% include 'navbar.html' %}</p>
+</html>
